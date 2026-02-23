@@ -8,5 +8,5 @@ import { MenuService } from '../../services/menu.service';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  menuService = inject(MenuService);
+  protected menuService = inject(MenuService);
 }

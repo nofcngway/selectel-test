@@ -9,7 +9,7 @@ import { HeaderComponent } from '../../components/header/header.component';
   styleUrl: './menu.component.css',
 })
 export class Menu implements OnInit {
-  menuService = inject(MenuService);
+  protected menuService = inject(MenuService);
 
   ngOnInit() {
     const firstSection = this.menuService.sections()[0];

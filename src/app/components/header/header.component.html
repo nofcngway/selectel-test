@@ -1,7 +1,9 @@
 <header class="menu-header">
-  <div class="header-left">
-    Раздел: {{ menuService.activeSection()?.name }}
-  </div>
+  @if (menuService.activeSection(); as section) {
+    <div class="header-left">
+      Раздел: {{ section.name }}
+    </div>
+  }
   <div class="header-right">
     <span>Выбрано пунктов: {{ menuService.selectedCount() }}</span>
     <span>Общее значение: {{ menuService.totalValue() }}</span>
