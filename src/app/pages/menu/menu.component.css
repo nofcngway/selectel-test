@@ -1,0 +1,63 @@
+.menu-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.menu-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden; 
+}
+
+.menu-sidebar {
+  width: 200px;
+  border-right: 1px solid #000;
+  overflow-y: auto;
+}
+
+.sidebar-item {
+  padding: 15px;
+  cursor: pointer;
+}
+
+.sidebar-item:hover {
+  background-color: #f0f0f0;
+}
+
+.sidebar-item.active {
+  font-weight: bold;
+  background-color: #e0e0e0;
+}
+
+.menu-content {
+  flex: 1;
+  background-color: #d8d8d8;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.item-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  color: #333;
+}
+
+.item-value {
+  color: #777;
+  font-size: 0.9em;
+}

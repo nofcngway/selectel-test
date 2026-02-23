@@ -1,17 +1,5 @@
 import { Injectable, signal, computed } from '@angular/core';
-
-export interface MenuItem {
-  id: number;
-  name: string;
-  value: number;
-  checked: boolean;
-}
-
-export interface MenuSection {
-  id: number;
-  name: string;
-  items: MenuItem[];
-}
+import { MenuSection, MenuItem } from '../models/menu.model';
 
 @Injectable({
   providedIn: 'root'

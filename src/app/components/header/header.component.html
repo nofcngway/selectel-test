@@ -1,0 +1,9 @@
+<header class="menu-header">
+  <div class="header-left">
+    Раздел: {{ menuService.activeSection()?.name }}
+  </div>
+  <div class="header-right">
+    <span>Выбрано пунктов: {{ menuService.selectedCount() }}</span>
+    <span>Общее значение: {{ menuService.totalValue() }}</span>
+  </div>
+</header>

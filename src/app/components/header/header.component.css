@@ -1,0 +1,11 @@
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-bottom: 1px solid #000;
+  font-weight: bold;
+}
+
+.header-right span {
+  margin-left: 20px;
+}

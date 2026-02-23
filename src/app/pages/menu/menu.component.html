@@ -1,0 +1,41 @@
+<div class="menu-page">
+  <app-header></app-header>
+
+  <div class="menu-layout">
+    
+    <aside class="menu-sidebar">
+      @for (section of menuService.sections(); track section.id) {
+        <div 
+          class="sidebar-item" 
+          [class.active]="menuService.activeSection()?.id === section.id"
+          (click)="menuService.setActiveSection(section)"
+        >
+          > {{ section.name }}
+        </div>
+      }
+    </aside>
+
+    <main class="menu-content">
+      @if (menuService.activeSection(); as activeSection) {
+        <div class="items-list">
+          @for (item of activeSection.items; track item.id) {
+            <label class="item-row">
+              <input 
+                type="checkbox" 
+                [checked]="item.checked"
+                (change)="menuService.toggleItem(item.id)"
+              >
+              <div class="item-info">
+                <span class="item-name">{{ item.name }}</span>
+                <span class="item-value">Value: {{ item.value }}</span>
+              </div>
+            </label>
+          }
+        </div>
+      } @else {
+        <div>Выберите раздел в меню слева.</div>
+      }
+    </main>
+
+  </div>
+</div>
