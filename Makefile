@@ -9,3 +9,6 @@ build:
 
 clean:
 	rm -rf dist/ .angular/
+
+deploy:
+    ng deploy --base-href="https://nofcngway.github.io/selectel-test/"

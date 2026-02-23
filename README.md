@@ -1,59 +1,67 @@
-# SelectelTest
+# Тестовое задание: Мини-приложение на Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+Проект разработан в рамках тестового задания по направлению «Frontend-разработка». 
+Это небольшое SPA (Single Page Application), состоящее из двух страниц, с использованием Angular.
 
-## Development server
+## Технологический стек
+- **Framework:** Angular 19+
+- **State Management:** Angular Signals (для управления состоянием меню)
+- **Языки:** TypeScript, HTML, CSS
+- **Роутинг:** Angular Router
 
-To start a local development server, run:
+## Реализованный функционал
 
+Согласно техническому заданию реализовано следующее:
+
+1. **Две страницы и навигация:**
+   - Главная страница (`/`) с приветственным текстом и кнопкой перехода.
+   - Страница меню (`/menu`).
+2. **Многосоставное меню (Вторая страница):**
+   - Боковая панель для навигации по категориям (разделам) меню.
+   - Списки чекбоксов для каждой категории (статичные данные в формате JSON хранятся в слое сервиса).
+3. **Header:**
+   - Вынесен в отдельный переиспользуемый компонент.
+   - Отображается только на странице меню.
+   - Реактивно показывает название выбранного раздела, количество отмеченных чекбоксов в нем и их суммарное значение. Подсчет ведется строго для текущего активного раздела.
+
+## Архитектура приложения
+
+Проект следует принципам чистой архитектуры и Angular Style Guide (kebab-case):
+- `src/app/models/` — TypeScript интерфейсы (`menu.model.ts`).
+- `src/app/services/` — логика работы с данными и состояние приложения (`menu.service.ts`). Полностью иммутабельное обновление состояния через Signals.
+- `src/app/components/` — переиспользуемые UI-компоненты (`header.component`).
+- `src/app/pages/` — компоненты-страницы, привязанные к роутеру (`home.component`, `menu.component`).
+
+## Запуск проекта
+
+Убедитесь, что у вас установлен [Node.js](https://nodejs.org/).
+
+В проекте настроен `Makefile`:
+
+### 1. Установка зависимостей
 ```bash
-ng serve
+make install
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+### 2. Запуск сервера разработки (http://localhost:4200/)
 ```bash
-ng generate component component-name
+make start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+### 3. Сборка production-версии
 ```bash
-ng generate --help
+make build
 ```
 
-## Building
-
-To build the project run:
-
+### 4. Очистка кэша и файлов сборки
 ```bash
-ng build
+make clean
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
+### 5. Деплой на GitHub Pages
 ```bash
-ng test
+make deploy
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Демо
+**[Посмотреть приложение](https://nofcngway.github.io/selectel-test/)**
